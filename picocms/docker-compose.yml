@@ -1,0 +1,13 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    image: picocms
+    container_name: pico
+    ports:
+      - "127.0.0.1:8080:80"
+    volumes:
+      - ./content:/var/www/html/content/:ro
+    restart: always
